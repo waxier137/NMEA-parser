@@ -1,0 +1,20 @@
+NMEA 0183 Message format
+$ <Address> {,value} *<checksum> <CR><LF>
+
+Address field: <Address>
+     - Only digits and uppercase letters, cannot be null
+     - Divided into 2 fields: <XX><XXX>
+     - <XX> : Talker identifier: always GP for a GPS receiver, P For proprietary Messages
+     - <XXX>: Sentence Formatter: Define message content
+
+Data fields: {,value}
+     - Delimited by a ","
+     - Length can vary for a certain field
+
+Checksum field: *<checksum>
+     - Starts with a "*"
+     - Consists of 2 characters representing a hex number
+     - Checksum = Exclusive OR of all characters between "$" and "*"
+
+End sequence: <CR><LF>
+     - Always <CR><LF>
