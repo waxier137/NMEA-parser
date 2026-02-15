@@ -1,0 +1,45 @@
+# NMEA 0183 Message Layout Configuration
+
+# GGA
+# Layout: Time, Lat, N/S, Lon, E/W, Quality, NumSatellites, HDOP, Altitude, AltUnit, GeoidSep, SepUnit, DiffAge, DiffStation
+GGA, TIME, LAT, CHAR, LON, CHAR, INT, INT, FLOAT, FLOAT, CHAR, FLOAT, CHAR, FLOAT, INT
+
+# GLL
+# Layout: Lat, N/S, Lon, E/W, Time, Status, PosMode
+GLL, LAT, CHAR, LON, CHAR, TIME, CHAR, CHAR
+
+# GNS
+# Layout: Time, Lat, N/S, Lon, E/W, PosMode, NumSatellites, HDOP, Alt, GeoidSep, DiffAge, DiffStation, NavStatus
+GNS, TIME, LAT, CHAR, LON, CHAR, STRING, INT, FLOAT, FLOAT, FLOAT, FLOAT, INT, CHAR
+
+# RMC
+# Layout: Time, Status, Lat, N/S, Lon, E/W, Speed(Knots), Course, Date, MagVar, MagVarE/W, PosMode, NavStatus
+RMC, TIME, CHAR, LAT, CHAR, LON, CHAR, FLOAT, FLOAT, DATE, FLOAT, CHAR, CHAR, CHAR
+
+# VTG
+# Layout: Course(True), T, Course(Mag), M, Speed(Knots), N, Speed(Kph), K, PosMode
+VTG, FLOAT, CHAR, FLOAT, CHAR, FLOAT, CHAR, FLOAT, CHAR, CHAR
+
+# GSA 
+# Layout: OpMode, NavMode, SV_ID(x12), PDOP, HDOP, VDOP, SystemID
+GSA, CHAR, INT, INT, INT, INT, INT, INT, INT, INT, INT, INT, INT, INT, INT, FLOAT, FLOAT, FLOAT, INT
+
+# GSV
+# Layout: NumMsgs, MsgNum, NumSV, [SvID, Elev, Azim, CNO] x 4, SignalID
+GSV, INT, INT, INT, INT, INT, INT, INT, INT, INT, INT, INT, INT, INT, INT, INT, INT, INT, INT, INT
+
+# ZDA
+# Layout: Time, Day, Month, Year, LocalZoneHours, LocalZoneMinutes
+ZDA, TIME, INT, INT, INT, INT, INT
+
+# GST
+# Layout: Time, RangeRMS, StdMajor, StdMinor, Orient, StdLat, StdLong, StdAlt
+GST, TIME, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT
+
+# DTM
+# Layout: DatumCode, SubDatum, LatOffset, N/S, LonOffset, E/W, AltOffset, RefDatum
+DTM, STRING, STRING, FLOAT, CHAR, FLOAT, CHAR, FLOAT, STRING
+
+# VLW
+# Layout: WaterDist, WaterUnit, WaterDistSinceReset, WaterUnit, GroundDist, GroundUnit, GroundDistSinceReset, GroundUnit
+VLW, FLOAT, CHAR, FLOAT, CHAR, FLOAT, CHAR, FLOAT, CHAR
