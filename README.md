@@ -1,4 +1,6 @@
 # NMEA 0183 Message Parser
+![Build Status](https://img.shields.io/badge/C%2B%2B-17-blue.svg) ![License](https://img.shields.io/badge/License-MIT-green.svg)
+
 A high-performance C++ tool designed to process raw GNSS NMEA logs, validate data integrity via XOR checksums, and visualize spatial paths in Google Earth.
 
 ## Project Overview
